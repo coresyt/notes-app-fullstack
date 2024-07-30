@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins as Font } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
 
-const { className } = Font({ subsets: ["latin"], weight: ["800", "600", "400"] });
+const font = Font({ subsets: ["latin"], weight: ["800", "600", "400"] });
 
 export const metadata: Metadata = {
   title: "Notes App FullStack",
@@ -14,9 +15,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const className = clsx(font.className, 'bg-san-juan-950 [&>*]:text-white flex items-center justify-center w-screen min-h-screen py-10')
+
   return (
     <html lang="en">
-      <body {...[className]}>{children}</body>
+      <body className={className}>{children}</body>
     </html>
   );
 }

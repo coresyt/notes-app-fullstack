@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .x-shadow {
+    mask-image: radial-gradient(black 80%, transparent);
+  }
+}
